@@ -2,17 +2,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cart {
-    private final List<Product> products;
-
-    public Cart() {
-        this.products = new ArrayList<>();
-    }
+    private final List<Product> products = new ArrayList<>();
 
     public void addProduct(Product product) {
         products.add(product);
     }
 
-    // Видаляє одну одиницю товару за ID. Повертає true, якщо товар був у кошику.
     public boolean removeProductById(int id) {
         for (int i = 0; i < products.size(); i++) {
             if (products.get(i).getId() == id) {
@@ -23,8 +18,9 @@ public class Cart {
         return false;
     }
 
+    // Гетер залишаємо ручним: повертає копію, а Lombok повернув би сам список
     public List<Product> getProducts() {
-        return new ArrayList<>(products); // копія, щоб не змінювали ззовні
+        return new ArrayList<>(products);
     }
 
     public boolean isEmpty() {

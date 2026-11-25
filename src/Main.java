@@ -70,7 +70,6 @@ public class Main {
         System.out.println("0 - Вийти");
     }
 
-    // Безпечне читання числа: не падає, якщо введено текст
     private static int readInt(Scanner scanner, String prompt) {
         while (true) {
             System.out.print(prompt);
@@ -146,11 +145,9 @@ public class Main {
         }
         for (Order order : orderHistory) {
             System.out.println(order);
-            System.out.println("-----------------------------");
         }
     }
 
-    // Пошук за назвою товару або назвою категорії (без урахування регістру)
     private static void searchProducts(Scanner scanner) {
         System.out.print("Введіть назву товару або категорії: ");
         String query = scanner.nextLine().trim().toLowerCase();
